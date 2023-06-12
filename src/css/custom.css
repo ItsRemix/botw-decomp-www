@@ -69,7 +69,7 @@ img[class^='themedImage--light'], img[class*=' themedImage--light'] {
 
 body {
   backdrop-filter: blur(19px);
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }
 
 html.container-botw-background {
