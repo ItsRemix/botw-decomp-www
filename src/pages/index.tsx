@@ -37,8 +37,7 @@ export default function Index() {
           </h2>
           <div className="row">
             <Block title="What is this?">
-              <p>This is a work-in-progress decompilation of LEGO Island version 1.1. It aims to be relatively faithful, but not byte accurate. The goal is to provide a workable codebase that can be modified, improved, and ported to other platforms later on.</p>
-
+              <p>This is a work-in-progress decompilation of LEGO Island version 1.1</p>
               <Link
                 className="button button--secondary"
                 to="/about">

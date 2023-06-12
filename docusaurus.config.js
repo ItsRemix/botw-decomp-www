@@ -8,9 +8,9 @@ const DISCORD_URL = '';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Breath of the Wild Decompilation',
-  tagline: 'An ongoing reverse engineering project to analyse and reimplement part of Breath of the Wild.',
-  url: 'https://botw.link',
+  title: 'LEGO Island Decompilation',
+  tagline: 'This is a work-in-progress decompilation of LEGO Island version 1.1',
+  url: 'https://lego.remix.ovh/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
