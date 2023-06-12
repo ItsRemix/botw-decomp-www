@@ -1,5 +1,7 @@
 import useSWR from 'swr';
 
+const sizeShouldBe = 1109000
+
 export type Counts = {
   /// Number of functions.
   count: number,
@@ -15,7 +17,6 @@ export type Entry = {
 };
 
 export async function loadEntries(): Promise<Entry[]> {
-  const sizeShouldBe = 1109000
   const size = await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
   const entries: Entry[] = [];
 
@@ -42,5 +43,5 @@ export async function getCurrentProgressText(): Promise<string> {
 }
 
 export function useCurrentProgressText() {
-  return useSWR("*progressText", getCurrentProgressText);
+  return loadEntries[0].size_in_bytes / sizeShouldBe 
 }
