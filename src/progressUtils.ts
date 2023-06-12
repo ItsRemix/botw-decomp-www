@@ -47,6 +47,6 @@ export async function getCurrentProgressText(): Promise<string> {
 }
 
 export async function useCurrentProgressText() {
-  const size = await getArtifacts();
+  const size = await getArtifacts().artifacts.map(element => element.size_in_bytes).reduce((a, b) => a + b);
   return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
 }
