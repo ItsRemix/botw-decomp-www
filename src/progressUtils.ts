@@ -25,7 +25,7 @@ export async function loadEntries(): Promise<Entry[]> {
       version: "1.1",
       time: art.created_at,
       total: sizeShouldBe,
-      decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995) / 1000,
+      decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995),
     })
   });
 
@@ -43,5 +43,6 @@ export async function getCurrentProgressText(): Promise<string> {
 }
 
 export async function useCurrentProgressText() {
-  return (await loadEntries())[0].decompiled / sizeShouldBe 
+  const size = await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
+  return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
 }
