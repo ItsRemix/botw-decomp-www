@@ -57,11 +57,6 @@ img[class^='themedImage--light'], img[class*=' themedImage--light'] {
   display: none;
 }
 
-.navbar {
-  background: rgba(53, 55, 56, 0.69) var(--bg-url);
-  background-blend-mode: lighten;
-}
-
 .footer {
   background: rgba(48, 56, 70, 0.6) var(--bg-url);
   background-blend-mode: lighten;
@@ -72,16 +67,18 @@ img[class^='themedImage--light'], img[class*=' themedImage--light'] {
   background-blend-mode: lighten;
 }
 
+body {
+  backdrop-filter: blur(19px);
+  overflow-x: hidden;
+}
+
 html.container-botw-background {
   background-image: var(--bg-url);
   background-attachment: fixed;
+  background-size: cover;
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-html.container-botw-background .navbar {
-  background: var(--bg-url);
 }
 
 html.container-botw-background .footer {
