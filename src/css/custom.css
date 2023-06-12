@@ -5,7 +5,7 @@
  */
 
 :root {
-  --bg-url: url(https://static.zeldamods.org/assets/bg.png);
+  --bg-url: url("/static/img/lego-island-game");
   --botw-white: #ffffd7;
   --botw-ui-font: Calamity;
 }

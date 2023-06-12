@@ -3,8 +3,8 @@
 
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
-const REPO_URL = 'https://github.com/zeldaret/botw';
-const DISCORD_URL = 'https://discord.zelda64.dev';
+const REPO_URL = 'https://github.com/isledecomp/isle';
+const DISCORD_URL = '';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -52,9 +52,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Breath of the Wild Decompilation',
+        title: 'LEGO Island Decompilation',
         logo: {
-          alt: 'Breath of the Wild Decompilation',
+          alt: 'LEGO Island Decompilation',
           src: 'img/logo.png',
           height: 32,
           width: 32,
@@ -91,20 +91,20 @@ const config = {
             title: 'Source code',
             items: [
               { label: 'GitHub', href: REPO_URL },
-              { label: 'Website source', href: 'https://github.com/open-ead/botw-decomp-www' },
+              { label: 'Website source', href: 'https://github.com/ItsRemix/lego-island-decomp-www' },
             ],
           },
           {
-            title: 'Community',
+            title: 'Creator',
             items: [
               {
-                label: 'ZeldaRET',
-                href: 'https://zelda64.dev',
+                label: 'Remix',
+                href: 'https://discord.remix.ovh',
               },
-              {
-                label: 'Zelda Decompilation Discord',
-                href: DISCORD_URL,
-              },
+              // {
+              //   label: 'Zelda Decompilation Discord',
+              //   href: DISCORD_URL,
+              // },
             ],
           },
         ],

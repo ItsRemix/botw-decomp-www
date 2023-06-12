@@ -37,7 +37,7 @@ export default function Index() {
           </h2>
           <div className="row">
             <Block title="What is this?">
-              <p>This is an ongoing reverse engineering project to analyse and reimplement part of <i>Breath of the Wild</i>.</p>
+              <p>This is a work-in-progress decompilation of LEGO Island version 1.1. It aims to be relatively faithful, but not byte accurate. The goal is to provide a workable codebase that can be modified, improved, and ported to other platforms later on.</p>
 
               <Link
                 className="button button--secondary"
@@ -47,7 +47,7 @@ export default function Index() {
             </Block>
 
             <Block title="I want to help">
-              <p>Join us if figuring out how a modern game works sounds fun to you! This is a group effort and every contribution helps.</p>
+              <p>You want to help decompiling LEGO Island? Read more about it in article below.</p>
 
               <Link
                 className="button button--secondary"
