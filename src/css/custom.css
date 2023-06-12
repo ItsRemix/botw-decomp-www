@@ -12,17 +12,17 @@
 
 @font-face {
   /* keep this in sync with --botw-ui-font */
-  font-family: Calamity;
+  font-family: Roboto;
   font-style: italic;
-  src: url("/static/fonts/Calamity-Regular.otf") format("opentype");
+  src: url("/static/fonts/Roboto-Regular.ttf") format("opentype");
 }
 
 @font-face {
   /* keep this in sync with --botw-ui-font */
-  font-family: Calamity;
+  font-family: Roboto;
   font-style: italic;
   font-weight: bold;
-  src: url("/static/fonts/Calamity-Bold.otf") format("opentype");
+  src: url("/static/fonts/Roboto-Bold.ttf") format("opentype");
 }
 
 .font-calamity {
