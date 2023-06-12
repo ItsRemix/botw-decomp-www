@@ -16,8 +16,12 @@ export type Entry = {
   decompiled: number,
 };
 
+export async function getArtifacts() {
+  return await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
+}
+
 export async function loadEntries(): Promise<Entry[]> {
-  const size = await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
+  const size = await getArtifacts();
   const entries: Entry[] = [];
 
   size.artifacts.forEach(art => {
@@ -43,6 +47,6 @@ export async function getCurrentProgressText(): Promise<string> {
 }
 
 export async function useCurrentProgressText() {
-  const size = await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
+  const size = await getArtifacts();
   return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
 }
