@@ -58,7 +58,7 @@ img[class^='themedImage--light'], img[class*=' themedImage--light'] {
 }
 
 .footer {
-  background: rgba(48, 56, 70, 0.6) var(--bg-url);
+  background: rgba(48, 56, 70, 0.6);
   background-blend-mode: lighten;
 }
 
