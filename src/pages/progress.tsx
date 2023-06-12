@@ -111,9 +111,9 @@ export default function Progress() {
             lines.push("Decompiled %: " + formatProgress(entry.decompiled, entry.total));
             if (item.datasetIndex == 1)
               return lines;
-            lines.push(`Decompiled size: ${entry.decompiled.size} bytes`);
-            lines.push("Matching %: " + formatProgress(entry.matching, entry.total));
-            lines.push("Commit: " + entry.rev);
+            lines.push(`Decompiled size: ${entry.decompiled} bytes`);
+            // lines.push("Commit: " + entry.rev);
+            lines.push("Commit: SOON")
             return lines;
           },
         },
