@@ -43,5 +43,5 @@ export async function getCurrentProgressText(): Promise<string> {
 }
 
 export function useCurrentProgressText() {
-  return loadEntries[0].size_in_bytes / sizeShouldBe 
+  return loadEntries()[0].size_in_bytes / sizeShouldBe 
 }
