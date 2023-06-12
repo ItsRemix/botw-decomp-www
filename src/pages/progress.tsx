@@ -131,11 +131,7 @@ export default function Progress() {
       </Head>
       <div className={styles.container}>
         <h1>Decompilation Progress</h1>
-        <InfoRow title="Functions" value={functions} />
         <InfoRow title="Decompiled" value={decompiled} />
-        <InfoRow title="Matching" value={matching} secondLevel />
-        <InfoRow title="Non-matching (minor issues)" value={nmMinor} secondLevel />
-        <InfoRow title="Non-matching (major issues)" value={nmMajor} secondLevel />
         <div
           className="chart-container"
           style={{ marginTop: 30, minHeight: 300 }}
