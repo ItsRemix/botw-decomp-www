@@ -1,6 +1,6 @@
 # LEGO Island decomp website
 
-This is the source code of the website for the LEGO Island decomp project.
+This is the source code of the website for the [LEGO Island decomp project](https://lego.remix.ovh/progress).
 
 ## Setup
 
