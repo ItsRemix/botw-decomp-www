@@ -28,8 +28,8 @@ function formatPercent(x: number, digits = 3) {
   return (100 * x).toFixed(digits) + "%";
 }
 
-function formatProgress(category: progressUtils.Counts, total: progressUtils.Counts) {
-  return `${formatPercent(category.size / total.size)}`;
+function formatProgress(category: number, total: number) {
+  return `${formatPercent(category / total)}`;
 }
 
 function formatSizeAsMb(sizeBytes: number, digits = 3) {
@@ -49,7 +49,7 @@ export default function Progress() {
 
       const last = entries[0];
 
-      setDecompiled(`${formatSizeAsMb(last.decompiled)}/${formatSizeAsMb(last.total)} MB - ${formatProgress(last.decompiled, last.total)}`);
+      setDecompiled(`${last.decompiled}/${last.total} KB - ${formatProgress(last.decompiled, last.total)}`);
 
       setChartData({
         datasets: [
