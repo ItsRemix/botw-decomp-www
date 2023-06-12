@@ -42,6 +42,6 @@ export async function getCurrentProgressText(): Promise<string> {
   return res.message;
 }
 
-export function useCurrentProgressText() {
-  return loadEntries()[0].decompiled / sizeShouldBe 
+export async function useCurrentProgressText() {
+  return (await loadEntries())[0].decompiled / sizeShouldBe 
 }
