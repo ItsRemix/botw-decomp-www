@@ -10,58 +10,23 @@ export type Counts = {
 export type Entry = {
   version: string,
   time: Date,
-  rev: string,
-  total: Counts,
-  decompiled: Counts,
-  matching: Counts,
-  nmMajor: Counts,
-  nmMinor: Counts,
+  total: number,
+  decompiled: number,
 };
 
-const PROGRESS_CSV_PATH = "https://botw.link/progress.csv";
-const CURRENT_PROGRESS_JSON_PATH = "https://botw.link/badges/progress.json";
-
 export async function loadEntries(): Promise<Entry[]> {
+  const sizeShouldBe = 1109000
+  const size = await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
   const entries: Entry[] = [];
-  const csv = await fetch(PROGRESS_CSV_PATH).then(response => response.text());
 
-  for (const line of csv.split("\n")) {
-    if (!line)
-      continue;
-
-    const row = line.split(",");
-    if (row.length != 11)
-      throw new Error("Invalid row: " + row);
-
-    const version = row[0];
-    if (version != "1")
-      throw new Error("Unexpected version: " + version);
-
-    const time = new Date(parseInt(row[1], 10) * 1000);
-    const rev = row[2];
-    const totalCount = parseInt(row[3], 10);
-    const totalSize = parseInt(row[4], 10);
-    const matchingCount = parseInt(row[5], 10);
-    const matchingSize = parseInt(row[6], 10);
-    const nmMinorCount = parseInt(row[7], 10);
-    const nmMinorSize = parseInt(row[8], 10);
-    const nmMajorCount = parseInt(row[9], 10);
-    const nmMajorSize = parseInt(row[10], 10);
-
+  size.artifacts.forEach(art => {
     entries.push({
-      version,
-      time,
-      rev,
-      total: { count: totalCount, size: totalSize },
-      decompiled: {
-        count: matchingCount + nmMinorCount + nmMajorCount,
-        size: matchingSize + nmMinorSize + nmMajorSize,
-      },
-      matching: { count: matchingCount, size: matchingSize },
-      nmMinor: { count: nmMinorCount, size: nmMinorSize },
-      nmMajor: { count: nmMajorCount, size: nmMajorSize },
-    });
-  }
+      version: "1.1",
+      time: art.created_at,
+      total: sizeShouldBe,
+      decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995) / 1000,
+    })
+  });
 
   for (const entry of entries) {
     // use the last entry to find out the total number of functions / bytes to decompile
