@@ -1,6 +1,6 @@
-# BotW decomp website
+# LEGO Island decomp website
 
-This is the source code of the website for the LEGO Island decompilation project.
+This is the source code of the website for the LEGO Island decomp project.
 
 ## Setup
 
