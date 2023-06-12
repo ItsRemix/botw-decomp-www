@@ -37,11 +37,7 @@ function formatSizeAsMb(sizeBytes: number, digits = 3) {
 }
 
 export default function Progress() {
-  const [functions, setFunctions] = useState("?????/?????? - ??.???%");
   const [decompiled, setDecompiled] = useState("?.???/??.??? MB - ??.???%");
-  const [matching, setMatching] = useState("??.???%");
-  const [nmMinor, setNmMinor] = useState("?.???%");
-  const [nmMajor, setNmMajor] = useState("?.???%");
 
   const [entries, setEntries] = useState<progressUtils.Entry[]>([]);
   const [chartData, setChartData] = useState(null);
@@ -51,13 +47,9 @@ export default function Progress() {
       const entries = await progressUtils.loadEntries();
       setEntries(entries);
 
-      const last = entries[entries.length - 1];
+      const last = entries[0];
 
-      setFunctions(`${last.decompiled.count}/${last.total.count} - ${formatPercent(last.decompiled.count / last.total.count)}`);
-      setDecompiled(`${formatSizeAsMb(last.decompiled.size)}/${formatSizeAsMb(last.total.size)} MB - ${formatProgress(last.decompiled, last.total)}`);
-      setMatching(`${formatProgress(last.matching, last.total)}`);
-      setNmMinor(`${formatProgress(last.nmMinor, last.total)}`);
-      setNmMajor(`${formatProgress(last.nmMajor, last.total)}`);
+      setDecompiled(`${formatSizeAsMb(last.decompiled)}/${formatSizeAsMb(last.total)} MB - ${formatProgress(last.decompiled, last.total)}`);
 
       setChartData({
         datasets: [
@@ -66,7 +58,7 @@ export default function Progress() {
             data: entries.map(entry => {
               return {
                 x: entry.time,
-                y: entry.decompiled.size / entry.total.size,
+                y: entry.decompiled / entry.total,
               };
             }),
             pointRadius: 0,
