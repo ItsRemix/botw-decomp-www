@@ -35,11 +35,6 @@ export async function loadEntries(): Promise<Entry[]> {
       total: sizeShouldBe,
       decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995),
     })
-
-    console.log(progress.percentage)
-
-    progress.percentage = (art.size_in_bytes - 4888 - 904 - 41984 - 20995) / sizeShouldBe
-    console.log(progress.percentage)
   });
 
   for (const entry of entries) {

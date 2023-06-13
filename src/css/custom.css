@@ -57,11 +57,6 @@ img[class^='themedImage--light'], img[class*=' themedImage--light'] {
   display: none;
 }
 
-.footer {
-  background: rgba(48, 56, 70, 0.6);
-  background-blend-mode: lighten;
-}
-
 .card {
   background: rgba(53, 55, 56, 0.8) var(--bg-url);
   background-blend-mode: lighten;
@@ -79,10 +74,6 @@ html.container-botw-background {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-html.container-botw-background .footer {
-  background: rgba(48, 56, 70, 0.5);
 }
 
 .aa-DetachedSearchButtonPlaceholder {
