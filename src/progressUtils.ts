@@ -47,9 +47,9 @@ export async function loadEntries(): Promise<Entry[]> {
   return entries;
 }
 
-export async function getCurrentProgress(): Promise<number> {
+export async function getCurrentProgress(): Promise<String> {
   await loadEntries()
-  return progress.percentage;
+  return progress.percentage / sizeShouldBe + "%";
 }
 
 export function useCurrentProgressText() {
