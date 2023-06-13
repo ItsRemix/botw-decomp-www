@@ -2,25 +2,11 @@
 
 This is the source code of the website for the [LEGO Island decomp project](https://lego.remix.ovh/progress).
 
-## Setup
+## How does it work?
 
-```shell
-git clone git@github.com:ItsRemix/lego-island-decomp-www
-cd lego-island-decomp-www
-npm install
-```
+It examines artifacts generated during the build check process and retrieves the sizes of the files. Subsequently, it excludes the sizes of all non-LEGO1.dll files. Following this, it is divided by the total size of LEGO1.dll (1109000 bytes), as demonstrated in Mattkc's video. If there are any inaccuracies, please feel free to direct message me on Discord at Remix#4945 or create a pull request.
 
-### Run a development server
-
-```shell
-npm run start
-```
-
-### Make a production build
-
-```shell
-npm run build
-```
+![](https://i.imgur.com/lLXCwdN.png)
 
 ## Licence
 
