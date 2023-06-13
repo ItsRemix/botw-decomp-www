@@ -36,7 +36,7 @@ export async function loadEntries(): Promise<Entry[]> {
       decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995),
     })
 
-  progress.percentage = (art.size_in_bytes - 4888 - 904 - 41984 - 20995)
+    progress.percentage = (art.size_in_bytes - 4888 - 904 - 41984 - 20995)
   });
 
   for (const entry of entries) {
@@ -48,10 +48,11 @@ export async function loadEntries(): Promise<Entry[]> {
 }
 
 export async function getCurrentProgress(): Promise<number> {
+  await loadEntries()
   return progress.percentage;
 }
 
-export async function useCurrentProgressText() {
+export function useCurrentProgressText() {
   // const size = await getArtifacts();
   // return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
   return useSWR("*progressText", getCurrentProgress);

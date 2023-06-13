@@ -19,9 +19,8 @@ function Block({ title, children }) {
   );
 }
 
-export default async function Index() {
-  const progressText = await progressUtils.useCurrentProgressText();
-  console.log("PROGRESS OMG " + progressText)
+export default function Index() {
+  const progressText = progressUtils.useCurrentProgressText();
   const ctx = useDocusaurusContext();
 
   return (
