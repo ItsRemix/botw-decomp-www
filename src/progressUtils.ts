@@ -16,6 +16,10 @@ export type Entry = {
   decompiled: number,
 };
 
+const progress = {
+  percentage: 0,
+}
+
 export async function getArtifacts() {
   return await fetch("https://api.github.com/repos/isledecomp/isle/actions/artifacts").then(res => res.json());
 }
@@ -31,6 +35,8 @@ export async function loadEntries(): Promise<Entry[]> {
       total: sizeShouldBe,
       decompiled: (art.size_in_bytes - 4888 - 904 - 41984 - 20995),
     })
+
+  progress.percentage = (art.size_in_bytes - 4888 - 904 - 41984 - 20995)
   });
 
   for (const entry of entries) {
@@ -41,12 +47,12 @@ export async function loadEntries(): Promise<Entry[]> {
   return entries;
 }
 
-export async function getCurrentProgressText(): Promise<string> {
-  const res = await fetch(CURRENT_PROGRESS_JSON_PATH).then(res => res.json());
-  return res.message;
+export async function getCurrentProgress(): Promise<number> {
+  return progress.percentage;
 }
 
 export async function useCurrentProgressText() {
-  const size = await getArtifacts();
-  return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
+  // const size = await getArtifacts();
+  // return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
+  return useSWR("*progressText", getCurrentProgressText);
 }
