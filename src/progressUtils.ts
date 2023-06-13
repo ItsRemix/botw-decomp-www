@@ -54,5 +54,5 @@ export async function getCurrentProgress(): Promise<number> {
 export async function useCurrentProgressText() {
   // const size = await getArtifacts();
   // return (size - 4888 - 904 - 41984 - 20995) / sizeShouldBe;
-  return useSWR("*progressText", getCurrentProgressText);
+  return useSWR("*progressText", getCurrentProgress);
 }
