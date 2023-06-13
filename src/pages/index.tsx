@@ -31,9 +31,7 @@ export default function Index() {
       <header className={styles.heroBanner}>
         <div className="container">
           <h2 className="hero__title" title="Current decompilation progress">
-            <Link to="/progress">
-              {progressText.data || "??.???%"}
-            </Link>
+            Lego Island Decomp
           </h2>
           <div className="row">
             <Block title="What is this?">
